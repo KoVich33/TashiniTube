@@ -194,9 +194,10 @@
     
     <div class="hammer" id="hammer"></div>
 
-    <script>
+       <script>
         // Элементы игры
         const gameField = document.getElementById('game-field');
+        const gameStatus = document.getElementById('game-status');
         const hammer = document.getElementById('hammer');
         
         // Переменные игры
@@ -204,6 +205,7 @@
         let moleTimer = null;
         let currentMole = null;
         let moleTimeout = null;
+        let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         
         // Инициализация игрового поля
         function initGameField() {
@@ -247,11 +249,14 @@
             mole.classList.add('active');
             currentMole = mole;
             
+            // Обновляем статус
+            gameStatus.textContent = "Крот появился!";
             
             // Устанавливаем таймер на скрытие крота через 1 секунду
             moleTimeout = setTimeout(() => {
                 if (mole.classList.contains('active')) {
                     hideMole(mole);
+                    gameStatus.textContent = "Крот убежал!";
                 }
             }, 1000);
             
@@ -282,6 +287,9 @@
             mole.classList.remove('active');
             mole.classList.add('hit');
             
+            // Обновляем статус
+            gameStatus.textContent = "Попал!";
+            
             // Сбрасываем текущего крота
             currentMole = null;
             clearTimeout(moleTimeout);
@@ -301,10 +309,17 @@
             }, 10);
         }
         
-        // Обработчик движения мыши для молотка (привязка к левому верхнему углу)
+        // Обновление позиции молотка
+        function updateHammerPosition(x, y) {
+            hammer.style.left = x + 'px';
+            hammer.style.top = y + 'px';
+        }
+        
+        // ===== ОБРАБОТЧИКИ ДЛЯ КОМПЬЮТЕРОВ =====
+        
+        // Обработчик движения мыши для молотка
         document.addEventListener('mousemove', (e) => {
-            hammer.style.left = e.pageX + 'px';
-            hammer.style.top = e.pageY + 'px';
+            updateHammerPosition(e.clientX, e.clientY);
         });
         
         // Обработчик клика для молотка
@@ -331,38 +346,63 @@
             }
         });
         
+        // ===== ОБРАБОТЧИКИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ =====
+        
+        // Обработчик начала касания
+        document.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            
+            // Обновляем позицию молотка
+            const touch = e.touches[0];
+            updateHammerPosition(touch.clientX, touch.clientY);
+            
+            // Анимация молотка
+            swingHammer();
+            
+            // Проверяем, коснулись ли крота
+            const element = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (element && element.classList.contains('mole')) {
+                setTimeout(() => {
+                    hitMole(element);
+                }, 150);
+            }
+        }, { passive: false });
+        
+        // Обработчик движения пальца
+        document.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            
+            // Обновляем позицию молотка при движении пальца
+            const touch = e.touches[0];
+            updateHammerPosition(touch.clientX, touch.clientY);
+        }, { passive: false });
+        
+        // Обработчик окончания касания
+        document.addEventListener('touchend', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
         // Начинаем игру сразу после загрузки
         window.addEventListener('load', () => {
             initGameField();
+            
+            // Показываем подсказку для мобильных устройств
+            if (isMobile) {
+                gameStatus.textContent = "Касайтесь экрана, чтобы бить кротов!";
+                setTimeout(() => {
+                    gameStatus.textContent = "Игра началась!";
+                }, 3000);
+            }
             
             // Первый крот появляется через 1 секунду
             setTimeout(showMole, 1000);
         });
         
-        // Обработчик для мобильных устройств (касание)
-        gameField.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            
-            // Эмуляция клика для мобильных устройств
-            const touch = e.touches[0];
-            const element = document.elementFromPoint(touch.clientX, touch.clientY);
-            
-            if (element && element.classList.contains('mole')) {
-                swingHammer();
-                setTimeout(() => {
-                    hitMole(element);
-                }, 150);
-            } else {
-                swingHammer();
+        // Предотвращаем контекстное меню на мобильных устройствах
+        document.addEventListener('contextmenu', (e) => {
+            if (isMobile) {
+                e.preventDefault();
             }
-        });
-        
-        // Для мобильных устройств обновляем позицию молотка
-        document.addEventListener('touchmove', (e) => {
-            e.preventDefault();
-            const touch = e.touches[0];
-            hammer.style.left = touch.pageX + 'px';
-            hammer.style.top = touch.pageY + 'px';
         });
     </script>
 </body>
