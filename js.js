@@ -153,7 +153,7 @@ let currentFilter = "Все";
                     <div class="video-details">
                         <h3 class="video-title">${video.title}</h3>
                         <p class="channel-name">${video.channel}</p>
-                        <p class="video-stats">${video.views} • ${video.time}</p>
+                        <p class="video-stats">${video.time}</p>
                         <div class="video-categories" style="margin-top: 5px; font-size: 12px; color: #888;">
                             ${video.category.map(cat => `<span class="category-tag">${cat}</span>`).join(' ')}
                         </div>
