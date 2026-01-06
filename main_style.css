@@ -360,3 +360,9 @@ font-size: 13px;
     margin-top: 120px;
     margin-left: 180px;
 }
+
+.yt-link {
+    background-color: #ff0000;
+    color: #f1f1f1;
+    font-size: 22px;
+}
