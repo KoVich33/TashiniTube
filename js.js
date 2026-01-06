@@ -8,7 +8,7 @@ const videoData = [
     duration: "04:08",
     category: ["Fortnite", "опыт", "баг"],
     thumbnail: "res/img/pw_vid001.jpg",
-    url: "https://youtu.be/iXl6VdFhpjo?si=fZ3C1T65WfBHW4lc"
+    url: "pages/🥶БАГ НА ОПЫТ! КАРТА ДЛЯ ОПЫТА В ФОРНАЙТ, СЕЗОН OG (ОКОЛО 500.000 XP).html"
 },
 {
     id: 2,
@@ -18,7 +18,7 @@ const videoData = [
     duration: "10:07",
     category: ["Minecraft", "коллабарация", "летсплей"],
     thumbnail: "res/img/pw_vid002.jpg",
-    url: "https://youtu.be/1xjjcT_3JoM?si=Op2bny_JRLY2GJNQ"
+    url: "pages/10 минут колонии строгого режима"
 },
 {
     id: 3,
@@ -28,7 +28,7 @@ const videoData = [
     duration: "18:24",
     category: ["Minecraft", "коллабарация", "летсплей"],
     thumbnail: "res/img/pw_vid003.jpg",
-    url: "https://youtu.be/sNamaE7GOGA?si=-yMbXTP2ijf4-JGA"
+    url: "pages/🔥МЫ ТОЛЬКО СБЕЖАЛИ ИЗ ТЮРМЫ, И УЖЕ ВЫЖИВАЕМ В ПИТЕРЕ😱😱😱"
 },
 {
     id: 4,
@@ -38,7 +38,7 @@ const videoData = [
     duration: "08:11",
     category: ["Minecraft", "постройка", "смертельный файл"],
     thumbnail: "res/img/pw_vid004.jpg",
-    url: "https://youtu.be/tRpUH6WelFo?si=ybYKMc_ne9VgkVvz"
+    url: "pages/🔥😱КАК СДЕЛАТЬ МЕДНОГО БЫКА В МАЙНЕ!😱🔥 (смертельный файл)"
 },
 {
     id: 5,
@@ -48,7 +48,7 @@ const videoData = [
     duration: "08:36",
     category: ["Minecraft", "постройка", "смертельный файл"],
     thumbnail: "res/img/pw_vid005.jpg",
-    url: "https://youtu.be/w2XVo6ghWGU?si=vsdw4TN9-jjCgzph"
+    url: "pages/🔥😱КАК СТРОИТЬ ЭЛЕКТРИЧЕСКИЙ СТУЛ В МАЙНКРАФТЕ🔥😱! (смертельный файл)"
 },
 {
     id: 6,
@@ -58,7 +58,7 @@ const videoData = [
     duration: "04:46",
     category: ["Minecraft", "постройка", "смертельный файл"],
     thumbnail: "res/img/pw_vid006.jpg",
-    url: "https://youtu.be/kCJ-LUnchy4?si=gW8ytNoOtzqQBhgE"
+    url: "pages/🔥😱КАК ПОСТРОИТЬ ГИЛЬОТИНУ В МАЙНКРАФТЕ! 🔥😱"
 },
 {
     id: 7,
@@ -78,7 +78,7 @@ const videoData = [
     duration: "03:03",
     category: ["Roblox", "летсплей", "пародия"],
     thumbnail: "res/img/pw_vid008.jpg",
-    url: "https://youtu.be/oRtQ1wcb_Uc?si=5P7IEoZ_uPwlXISv"
+    url: "pages/САМЫЕ ПОПУЛЯРНЫЕ РЕЖИМЫ В ROBLOX"
 },
 {
     id: 9,
@@ -88,7 +88,7 @@ const videoData = [
     duration: "07:39",
     category: ["Garry's mod", "skibidi toilet", "скибиди туалет", "gmod"],
     thumbnail: "res/img/pw_vid009.jpg",
-    url: "https://youtu.be/QeMynvaED-o?si=NI_DkNUy02iU4fst"
+    url: "pages/нажав на это видео, ты узнаешь о себе всё что нужно"
 }
 
 /*
