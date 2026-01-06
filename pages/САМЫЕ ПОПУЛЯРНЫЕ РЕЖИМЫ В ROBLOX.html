@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>САМЫЕ ПОПУЛЯРНЫЕ РЕЖИМЫ В ROBLOX  |  TashiniTube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../main_style.css">
+    <link rel="stylesheet" href="../player_style.css">
+
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo-section">
+            <a href="../index.html">
+            <div class="logo">
+                <img src="../res/img/profile.jpg" width="35px" height="35px">
+                <span>TashiniTube</span>
+            </div>
+            </a>
+        </div>
+    </header>
+    
+
+    <div class="video-player-container">
+        <!-- Видеоплеер -->
+        <div class="video-wrapper" id="videoWrapper">
+            <video class="video-element" id="videoPlayer">
+                <source src="" type="video/mp4">
+                Ваш браузер не поддерживает видео тег.
+            </video>
+            
+            <!-- Панель управления -->
+            <div class="video-controls">
+                <!-- Прогресс бар и время -->
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="time-display">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+                
+                <!-- Основные кнопки управления -->
+                <div class="controls-main">
+                    <div class="controls-left">
+                        <button class="control-btn play-pause-btn" id="playPauseBtn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        
+                        <button class="control-btn" id="skipBackBtn">
+                            <i class="fas fa-backward"></i>
+                        </button>
+                        
+                        <button class="control-btn" id="skipForwardBtn">
+                            <i class="fas fa-forward"></i>
+                        </button>
+                        
+                        <!-- Громкость -->
+                        <div class="volume-container">
+                            <button class="control-btn" id="volumeBtn">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <div class="volume-slider-container">
+                                <input type="range" min="0" max="100" value="100" class="volume-slider" id="volumeSlider">
+                            </div>
+                        </div>
+                        
+                        <span id="volumePercent" style="font-size: 14px; min-width: 40px;">100%</span>
+                    </div>
+                    
+                    <div class="controls-right">
+                        <!-- Скорость воспроизведения -->
+                        <div class="speed-container">
+                            <button class="control-btn" id="speedBtn">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </button>
+                            <div class="speed-menu" id="speedMenu">
+                                <div class="speed-option" data-speed="0.25">0.25x</div>
+                                <div class="speed-option" data-speed="0.5">0.5x</div>
+                                <div class="speed-option active" data-speed="1">1x (нормальная)</div>
+                                <div class="speed-option" data-speed="1.25">1.25x</div>
+                                <div class="speed-option" data-speed="1.5">1.5x</div>
+                                <div class="speed-option" data-speed="2">2x</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Полноэкранный режим -->
+                        <button class="control-btn" id="fullscreenBtn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Информация о видео -->
+        <div class="video-info-panel">
+            <h1 class="video-title" id="videoTitle">Загрузите или выберите видео</h1>
+            <div class="video-stats">
+                <span id="uploadDate">29 мар. 2024 г.</span>
+                <a class="yt-link" href="https://youtu.be/oRtQ1wcb_Uc?si=5P7IEoZ_uPwlXISv">ПОСМОТРЕТЬ НА YOUTUBE</a>
+            </div>
+        </div>
+
+    <script src="../videoplayer.js"></script>
+    <script>
+            videoPlayer.src = "../res/vid/САМЫЕ ПОПУЛЯРНЫЕ РЕЖИМЫ В ROBLOX.mp4";
+            videoTitle.textContent = "САМЫЕ ПОПУЛЯРНЫЕ РЕЖИМЫ В ROBLOX";
+            
+            showNotification(`Видео "${file.name}" загружено`);
+    </script>
+</body>
+</html>
