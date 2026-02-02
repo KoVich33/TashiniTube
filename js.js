@@ -3,7 +3,7 @@ const videoData = [
 {
     id: 1,
     title: "🥶БАГ НА ОПЫТ! КАРТА ДЛЯ ОПЫТА В ФОРНАЙТ, СЕЗОН OG (ОКОЛО 500.000 XP)",
-    channel: "",
+    channel: "TashiniOMG",
     time: "5 нояб. 2023 г.",
     duration: "04:08",
     category: ["Fortnite", "опыт", "баг"],
@@ -68,7 +68,7 @@ const videoData = [
     duration: "27:05",
     category: ["Garry's mod", "коллабарация", "летсплей", "gmod"],
     thumbnail: "res/img/pw_vid007.jpg",
-    url: "https://youtu.be/hmDGyLxAAYo?si=Ch46Ivg7vcQa-x48"
+    url: "pages/💀🔥СМОТРИМ ДУБЛИКАТЫ С УМСТВЕННЫМИ ОТКЛОНЕНИЯМИ🔥💀"
 },
 {
     id: 8,
@@ -149,7 +149,7 @@ let currentFilter = "Все";
                     </div>
                 </div>
                 <div class="video-info">
-                    <div class="channel-icon">${video.channel.charAt(0)}</div>
+                    <div class="channel-icon"><img src="res/img/profile.jpg" width="40" height="40"></div>
                     <div class="video-details">
                         <h3 class="video-title">${video.title}</h3>
                         <p class="channel-name">${video.channel}</p>
