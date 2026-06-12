@@ -89,6 +89,16 @@ const videoData = [
     category: ["Garry's mod", "skibidi toilet", "скибиди туалет", "gmod"],
     thumbnail: "res/img/pw_vid009.jpg",
     url: "pages/нажав на это видео, ты узнаешь о себе всё что нужно"
+},
+{
+    id: 10,
+    title: "🔥🔥KAIORI СМОТРИТ ХАЙЛАЙТЫ SKY_DEAD В GO_GOATED🤯",
+    channel: "Kaiori",
+    time: "12 июн. 2026 г.",
+    duration: "04:10",
+    category: ["реакция", "Fortnite", "киберспорт"],
+    thumbnail: "res/img/pw_vid010.jpg",
+    url: "pages/🔥🔥KAIORI СМОТРИТ ХАЙЛАЙТЫ SKY_DEAD В GO_GOATED🤯.html"
 }
 
 /*
@@ -141,6 +151,28 @@ let currentFilter = "Все";
             videoCard.dataset.id = video.id;
             videoCard.dataset.category = video.category.join(',');
             
+            if (videoCard.dataset.id == 10) {
+            videoCard.innerHTML = `
+                <div class="thumbnail">
+                    <img src="${video.thumbnail}" alt="${video.title}" onerror="this.src='https://via.placeholder.com/300x170/272727/fff?text=Thumbnail'">
+                    <span class="video-duration">${video.duration}</span>
+                    <div class="video-id-badge" style="position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.7); color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: bold;">
+                    </div>
+                </div>
+                <div class="video-info">
+                    <div class="channel-icon"><img src="res/img/profile2.jpg" width="40" height="40"></div>
+                    <div class="video-details">
+                        <h3 class="video-title">${video.title}</h3>
+                        <p class="channel-name">${video.channel}</p>
+                        <p class="video-stats">${video.time}</p>
+                        <div class="video-categories" style="margin-top: 5px; font-size: 12px; color: #888;">
+                            ${video.category.map(cat => `<span class="category-tag">${cat}</span>`).join(' ')}
+                        </div>
+                    </div>
+                </div>
+            `;}
+
+            if (videoCard.dataset.id != 10) {
             videoCard.innerHTML = `
                 <div class="thumbnail">
                     <img src="${video.thumbnail}" alt="${video.title}" onerror="this.src='https://via.placeholder.com/300x170/272727/fff?text=Thumbnail'">
@@ -159,7 +191,7 @@ let currentFilter = "Все";
                         </div>
                     </div>
                 </div>
-            `;
+            `;}
             
             videoGrid.appendChild(videoCard);
         });
