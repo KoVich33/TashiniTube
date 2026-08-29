@@ -98,7 +98,7 @@ const videoData = [
     duration: "04:10",
     category: ["реакция", "Fortnite", "киберспорт"],
     thumbnail: "res/img/pw_vid010.jpg",
-    url: "pages/🔥🔥KAIORI СМОТРИТ ХАЙЛАЙТЫ SKY_DEAD В GO_GOATED🤯.html"
+    url: "pages/🔥🔥KAIORI СМОТРИТ ХАЙЛАЙТЫ SKY_DEAD В GO_GOATED🤯"
 }
 
 /*
